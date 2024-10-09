@@ -58,7 +58,7 @@
 
 ```json
 {
-"movie": {
+    "movie": {
         "id": 1,
         "title": "Example movie",
         "year": 2018,
