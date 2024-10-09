@@ -39,7 +39,6 @@
     "movie": {
         "id": 1,
         "title": "Example movie",
-        REST-full API 2
         "year": 2018,
         "director": "Somebody",
         "length": "02:30:00",
@@ -76,11 +75,10 @@
 ```json
 {
     "movie": {
-        "id": <уникальный идентификатор записи>,
+        "id": 1,
         "title": "Example movie",
         "year": 2018,
         "director": "Somebody",
-        REST-full API 3
         "length": "02:30:00",
         "rating": 8
     }
