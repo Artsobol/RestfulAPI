@@ -36,13 +36,13 @@ async def update_movie(db: Annotated[AsyncSession, Depends(get_db)], movie_id: i
         raise HTTPException(status_code=400, detail="No data provided for update")
 
     updated_movie = await check_db_exceptions(crud_movies.update_movie, db, movie_id, update_data)
-    return {"status": "Movie updated successfully", "movie": updated_movie}
+    return {"movie": updated_movie}
 
 
 @router.delete("/{movie_id}", status_code=status.HTTP_202_ACCEPTED)
 async def delete_movie(db: Annotated[AsyncSession, Depends(get_db)], movie_id: int):
     await check_db_exceptions(crud_movies.delete_movie, db, movie_id)
-    return {"status": status.HTTP_202_ACCEPTED, "message": "Movie deleted successfully"}
+    return {"status": status.HTTP_202_ACCEPTED}
 
 
 async def check_db_exceptions(operation, *args, **kwargs):
