@@ -19,6 +19,7 @@ async def get_movie(db: AsyncSession, movie_id: int):
 
 async def create_movie(db: AsyncSession, movie: CreateMovie):
     new_movie = Movies(
+        id=movie.id,
         title=movie.title,
         year=movie.year,
         director=movie.director,
@@ -28,6 +29,7 @@ async def create_movie(db: AsyncSession, movie: CreateMovie):
     db.add(new_movie)
     await db.commit()
     await db.refresh(new_movie)
+    return new_movie
 
 
 async def delete_movie(db: AsyncSession, movie_id: int):
